@@ -76,11 +76,7 @@ def main():
     args = parser.parse_args()
 
     # Check out model
-    model_path = snapshot_download(
-        repo_id=args.model,
-        cache_dir=args.output_dir,
-        force_download=False,
-    )
+    model_path=args.model
 
     os.chdir(model_path)
     convert_output_dir = os.path.join(model_path, "ctranslate2")
